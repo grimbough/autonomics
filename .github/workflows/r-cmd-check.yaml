@@ -37,7 +37,10 @@ jobs:
           bioc-mirror: ${{ matrix.config.bioc-mirror }}
           
       - uses: r-lib/actions/setup-pandoc@v2
-      
+
+      - name: Install dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+
       - name: Bioc - Build, Install, Check
         uses: grimbough/bioc-actions/build-install-check@v1
 
